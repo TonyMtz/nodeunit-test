@@ -11,15 +11,10 @@
   };
 
   Cat.prototype.sum = function() {
-    var args = Array.prototype.slice.call(arguments),
-      buffer = 0;
-    args.forEach(function(number) {
-      var parsed = parseInt(number, 10);
-      if (!isNaN(parsed)) {
-        buffer += number;
-      }
-    });
-    return buffer;
+    var args = Array.prototype.slice.call(arguments);
+    return arg.reduce(function(prev, current){
+      return prev + current
+    }, 0);
   };
 
   Cat.prototype.copyArray = function(array) {
